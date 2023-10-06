@@ -1,4 +1,4 @@
-# LGPD
+# Delphix CC Profile & Expressions Setup
 
 ## Masking
 

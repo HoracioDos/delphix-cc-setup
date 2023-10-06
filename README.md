@@ -4,7 +4,7 @@
 ```sh
 # dpxcc_setup.sh
 # Created: Paulo Victor Maluf - 09/2019
-# Modified: Horacio Dos - 10-2023
+# Modified: Horacio Dos - 10/2023
 # Parameters:
 #
 #   dpxcc_setup.sh --help

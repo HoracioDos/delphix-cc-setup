@@ -12,8 +12,8 @@
 #    Parameter             Short Description                                                        Default
 #    --------------------- ----- ------------------------------------------------------------------ --------------
 #    --profile-name           -p Profile name                                                       TEST
-#    --expressions-file       -e CSV file like ExpressionName;DomainName;level;Regex                expressions.cfg
-#    --domains-file           -d CSV file like Domain Name;Classification;Algorithm                 domains.cfg
+#    --expressions-file       -e CSV file like ExpressionName;DomainName;level;Regex                expressions.csv
+#    --domains-file           -d CSV file like Domain Name;Classification;Algorithm                 domains.csv
 #    --masking-engine         -m Masking Engine Address
 #    --help                   -h help
 #

@@ -1,7 +1,5 @@
 # Delphix CC Profile & Expressions Setup
 
-## Masking
-
 ### masking_setup.sh
 ```sh
 # masking_setup.sh

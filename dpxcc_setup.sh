@@ -11,13 +11,13 @@
 #    Parameter             Short Description                                                        Default
 #    --------------------- ----- ------------------------------------------------------------------ ---------------
 #    --profile-name           -p Profile name                                                       TEST
-#    --expressions-file       -e Delimiter file with: ExpressionName;DomainName;level;Regex         expressions.cfg               
-#    --domains-file           -d Delimiter file with: Domain Name;Classification;Algorithm          domains.cfg 
+#    --expressions-file       -e Delimiter file with: ExpressionName;DomainName;level;Regex         expressions.csv               
+#    --domains-file           -d Delimiter file with: Domain Name;Classification;Algorithm          domains.csv 
 #    --masking-engine         -m Masking Engine Address 
 #    --help                   -h help
 #
 #   Ex.: 
-#   dpxcc_setup.sh --profile-name TEST -e ./expressions.csv -d domains.cfg -m 192.168.73.85
+#   dpxcc_setup.sh --profile-name TEST -e ./expressions.csv -d domains.csv -m 192.168.73.85
 #
 # Changelog:
 #

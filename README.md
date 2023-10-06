@@ -17,5 +17,5 @@
 #    --masking-engine         -m Masking Engine Address
 #    --help                   -h help
 #
-#   Ex.: dpxcc_setup.sh --profile-name TEST -e ./expressions.csv -d domains.cfg -m 172.168.8.128
+#   Ex.: dpxcc_setup.sh --profile-name TEST -e ./expressions.csv -d domains.csv -m 172.168.8.128
 ```

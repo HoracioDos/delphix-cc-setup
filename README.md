@@ -1,6 +1,6 @@
 # Delphix CC Profile & Expressions Setup
 
-### masking_setup.sh
+### dpxcc_setup.sh
 ```sh
 # dpxcc_setup.sh
 # Created: Paulo Victor Maluf - 09/2019

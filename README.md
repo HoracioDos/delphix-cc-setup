@@ -2,12 +2,12 @@
 
 ### masking_setup.sh
 ```sh
-# masking_setup.sh
+# dpxcc_setup.sh
 # Created: Paulo Victor Maluf - 09/2019
-#
+# Modified: Horacio Dos - 10-2023
 # Parameters:
 #
-#   masking_setup.sh --help
+#   dpxcc_setup.sh --help
 #
 #    Parameter             Short Description                                                        Default
 #    --------------------- ----- ------------------------------------------------------------------ --------------
@@ -17,5 +17,5 @@
 #    --masking-engine         -m Masking Engine Address
 #    --help                   -h help
 #
-#   Ex.: masking_setup.sh --profile-name LGPD -e ./expressions.csv -d domains.cfg -m 172.168.8.128
+#   Ex.: dpxcc_setup.sh --profile-name TEST -e ./expressions.csv -d domains.cfg -m 172.168.8.128
 ```

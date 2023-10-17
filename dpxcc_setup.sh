@@ -91,23 +91,23 @@ curl -s -X POST -H ''"${AUTH_HEADER}"'' -H 'Content-Type: application/json' -H '
   "domainName": "${DOMAIN}",
   "expressionName": "${EXPRESSNAME}",
   "regularExpression": "${REGEXP}",
-  "dataLevelProfiling": ${DATALEVEL}
+  "dataLevelProfiling": "${DATALEVEL}"
 }
 EOF
 }
 
 add_domain(){
-NEW_DOMAIN=${1}
-CLASSIFICATION=${2}
-ALGORITHM=${3}
+local DOMAIN_NAME="$1"
+local DFT_ALGO_CODE="$2"
+local DFT_TOKEN_CODE="$3"
 
-curl -s -X POST -H ''"${AUTH_HEADER}"'' -H 'Content-Type: application/json' -H 'Accept: application/json' --data @- ${MASKING_ENGINE}/domains <<EOF
-{
-  "domainName": "${NEW_DOMAIN}",
-  "classification": "${CLASSIFICATION}",
-  "defaultAlgorithmCode": "${ALGORITHM}"
-}
-EOF
+if [ -z "$DFT_TOKEN_CODE" ]; then
+  	local DATA="{ \"defaultAlgorithmCode\": \"$DFT_ALGO_CODE\", \"domainName\": \"$DOMAIN_NAME\"}"
+else
+	local DATA="{ \"defaultAlgorithmCode\": \"$DFT_ALGO_CODE\", \"defaultTokenizationCode\": \"$DFT_TOKEN_CODE\", \"domainName\": \"$DOMAIN_NAME\"}"
+fi
+
+curl -s -X POST -H ''"${AUTH_HEADER}"'' -H 'Content-Type: application/json' -H 'Accept: application/json' --data "$DATA" @- ${MASKING_ENGINE}/domains
 }
 
 add_profileset(){
@@ -177,15 +177,14 @@ if [ ${MASKING_ENGINE} ]
     if [ ${EXPRESSFILE} ] && [ ${DOMAINSFILE} ]
       then
         # Create Domains 
-        log "Creating domain ${NEW_DOMAIN}...\n"
-        while IFS=\; read -r NEW_DOMAIN CLASSIFICATION ALGORITHM
+        while IFS=\; read -r DOMAIN_NAME DFT_ALGO_CODE DFT_TOKEN_CODE
         do
           if [[ ! ${NEW_DOMAIN} =~ "#" ]]
             then
-              ret=$(add_domain ${NEW_DOMAIN} ${CLASSIFICATION} ${ALGORITHM})
+              ret=$(add_domain "$DOMAIN_NAME" "$DFT_ALGO_CODE" "$DFT_TOKEN_CODE")
           fi
         done < ${DOMAINSFILE}
-
+        
         # Create Expressions 
         log "Creating expressions: \n"
         while IFS=\; read -r EXPRESSNAME DOMAIN DATALEVEL REGEXP
@@ -213,6 +212,6 @@ if [ ${MASKING_ENGINE} ]
         ret=$(add_profileset "${PROFILENAME}" "${EXPRESSID}")
 
         # remove tmpfile
-        rm -f $$.tmp
+        # rm -f $$.tmp
     fi   
 fi

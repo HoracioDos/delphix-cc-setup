@@ -8,7 +8,7 @@
 0_AR_CP;dlpx-core:CM Numeric;;
 0_AR_DNI;dlpx-core:CM Numeric;;
 0_AR_PASAPORTE;dlpx-core:CM Numeric;;
-0_AR_TELEFONO;TelephoneNoLookup;;
+0_AR_TELEFONO;dlpx-core:Phone Unique;;
 0_AR_CIUDAD;USCitiesLookup;;
 0_AR_BARRIO;USCountiesLookup;;
 0_AR_PROVINCIA;USstatecodesLookup;;
